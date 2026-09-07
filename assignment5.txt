@@ -1,0 +1,160 @@
+bài 1
+import java.util.Scanner;
+
+public class BasicStringInformation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a line: ");
+        String str = sc.nextLine();
+
+        String trimmed = str.trim();
+
+        System.out.println("Original: [ " + str + " ]");
+        System.out.println("Trimmed: [" + trimmed + "]");
+        System.out.println("Upper:   " + str.toUpperCase());
+        System.out.println("Lower:   " + str.toLowerCase());
+        System.out.println("Original length = " + str.length());
+        System.out.println("Length after trim = " + trimmed.length());
+
+        sc.close();
+    }
+}
+
+
+bài 3:
+public class StringConcatenation {
+    public static void main(String[] args) {
+
+        String first = "Duy Tan";
+        String second = "University";
+
+                String result1 = first + " " + second;
+        System.out.println("Using +: " + result1);
+
+        String result2 = first.concat(" ").concat(second);
+        System.out.println("Using concat: " + result2);
+
+        first.concat(" University");
+
+        System.out.println("first after concat without reassignment: " + first);
+    }
+}
+
+bài 4:
+import java.util.Scanner;
+
+public class ParseStudentID {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter student ID, for example SE123456: ");
+        String studentID = sc.nextLine();
+
+        String majorCode = studentID.substring(0, 2);
+        String numericPart = studentID.substring(2);
+
+        System.out.println("Major code = " + majorCode);
+        System.out.println("Numeric part = " + numericPart);
+
+        sc.close();
+    }
+}
+
+bài 5:
+import java.util.Scanner;
+
+public class CheckPrefixSuffix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter file name: ");
+        String fileName = sc.nextLine();
+
+        System.out.println("Starts with report: "
+                + fileName.startsWith("report"));
+
+        System.out.println("Ends with .pdf: "
+                + fileName.endsWith(".pdf"));
+
+        System.out.println("First character = "
+                + fileName.charAt(0));
+
+        System.out.println("Last character = "
+                + fileName.charAt(fileName.length() - 1));
+
+        sc.close();
+    }
+}
+
+
+bài 7:
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        StringBuilder sb = new StringBuilder(str);
+        sb.reverse();
+
+        System.out.println("Original: " + str);
+        System.out.println("Reversed: " + sb);
+
+        sc.close();
+    }
+}
+
+bài 8:
+import java.util.Scanner;
+
+public class CountCharacter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter text: ");
+        String text = sc.nextLine();
+
+        System.out.print("Enter character to count: ");
+        char target = sc.nextLine().charAt(0);
+
+        int count = 0;
+
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == target) {
+                count++;
+            }
+        }
+
+        System.out.println("Occurrences of '" + target + "': " + count);
+
+        sc.close();
+    }
+}
+
+
+bài 10:
+import java.util.Scanner;
+
+public class CensorWord {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter sentence: ");
+        String sentence = sc.nextLine();
+
+        System.out.print("Enter word to censor: ");
+        String word = sc.nextLine();
+
+        String stars = "*".repeat(word.length());
+
+        String censored = sentence.replace(word, stars);
+
+        System.out.println("Censored: " + censored);
+
+        sc.close();
+    }
+}
